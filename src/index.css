@@ -1,1 +1,94 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #1a365d;
+  --color-primary-light: #2c5282;
+  --color-primary-dark: #0f2440;
+  --color-accent: #e8a838;
+  --color-accent-light: #f6c36c;
+  --color-accent-dark: #c48a1a;
+  --color-surface: #f7fafc;
+  --color-surface-dark: #edf2f7;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(135deg, #0f2440 0%, #1a365d 30%, #2c5282 60%, #1a365d 100%);
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(26, 54, 93, 0.15);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #e8a838, #f6c36c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #e8a838, #c48a1a);
+    color: white;
+    padding: 0.875rem 2.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(232, 168, 56, 0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(232, 168, 56, 0.4);
+  }
+
+  .btn-outline {
+    border: 2px solid white;
+    color: white;
+    padding: 0.875rem 2.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-outline:hover {
+    background: white;
+    color: #1a365d;
+  }
+
+  .section-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #e8a838, #f6c36c);
+    border-radius: 2px;
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(circle, rgba(232, 168, 56, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .counter-number {
+    font-variant-numeric: tabular-nums;
+  }
+}
